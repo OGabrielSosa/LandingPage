@@ -20,6 +20,17 @@ npm install # Instala las dependencias del proyecto
 ```
 
    Asegúrate de tener Node.js y npm instalados. Puedes verificarlo con:
+```bash
+node -v
+npm -v
+```
+3.1 **Levanta el servidor de desarrollo:**
+
+```bash
+npm run dev
+```
+   Abre tu navegador en `http://localhost:3000` para ver la aplicación en funcionamiento.
+   deberías ver la página de inicio de la landing page.
 
 
 4. **Sincroniza tu fork con la última versión de `develop` antes de empezar:**
