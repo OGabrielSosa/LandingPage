@@ -1,6 +1,6 @@
 # Guía de Inicio para Desarrolladores Folkode Landing
 
-## 🚦 Pasos para Contribuir al Proyecto
+##  Pasos para Contribuir al Proyecto
 
 1. **Haz un fork del repositorio:**
 
