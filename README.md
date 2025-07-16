@@ -9,49 +9,50 @@
 2. **Clona tu fork en tu máquina local:**
 
 ```bash
-git clone https://github.com/tu-usuario/landing.git
+git clone https://github.com/tu-usuario/landing.git # NO SE OLVIDEN DE PONER SU USARIO DE GITHUB
 ```
 
 3. **Accede a la carpeta e instala las dependencias:**
 
 ```bash
-cd landing
-npm install
+cd landing # Cambias a la carpeta del proyecto
+npm install # Instala las dependencias del proyecto
 ```
 
-4. **Agrega el repositorio original como remoto `upstream`:**
+   Asegúrate de tener Node.js y npm instalados. Puedes verificarlo con:
+
+
+4. **Sincroniza tu fork con la última versión de `develop` antes de empezar:**
 
 ```bash
-git remote add upstream https://github.com/FolkodeGroup/landing.git
+git checkout develop
+git pull upstream develop
+git push origin develop
 ```
 
-5. **Sincroniza tu fork con la última versión de `main` antes de empezar:**
-
-```bash
-git checkout main
-git pull upstream main
-git push origin main
-```
-
-6. **Crea una nueva rama para tu tarea asignada:**
+5. **Crea una nueva rama para tu tarea asignada:**
 
 ```bash
 git checkout -b feature/2.1/crear-componente-button
 ```
 
-7. **Desarrolla el componente en el archivo correspondiente**
-   Ejemplo: `src/components/ui/Button.tsx`
+
+6. **Desarrolla el componente en el archivo correspondiente**  
+   Ejemplo: `src/components/ui/Button.tsx`  
+   
    Sigue la descripción y los criterios de aceptación definidos en ClickUp.
 
-8. **Realiza commits pequeños y descriptivos conforme avances.**
+7. **Realiza commits pequeños y descriptivos conforme avances.**
 
-9. **Sube tu rama a tu fork en GitHub:**
+8 . **Sube tu rama a tu fork en GitHub:**
 
 ```bash
 git push -u origin nombre-de-la-rama
 ```
 
-10. **Crea una Pull Request (PR) desde tu fork hacia `main` del repositorio original.**
+
+9. **Crea una Pull Request (PR) desde tu fork hacia `main` del repositorio original.**  
+
     En la descripción, enlaza la tarea de ClickUp y asígnale al revisor correspondiente.
 
 ---
