@@ -1,4 +1,4 @@
-# Guía de Inicio para Desarrolladores Folkode Landing
+#  Guía de Inicio para Desarrolladores Folkode Landing
 
 ##  Pasos para Contribuir al Proyecto
 
@@ -36,8 +36,10 @@ git push origin develop
 git checkout -b feature/2.1/crear-componente-button
 ```
 
+
 6. **Desarrolla el componente en el archivo correspondiente**  
    Ejemplo: `src/components/ui/Button.tsx`  
+   
    Sigue la descripción y los criterios de aceptación definidos en ClickUp.
 
 7. **Realiza commits pequeños y descriptivos conforme avances.**
@@ -48,7 +50,9 @@ git checkout -b feature/2.1/crear-componente-button
 git push -u origin nombre-de-la-rama
 ```
 
+
 9. **Crea una Pull Request (PR) desde tu fork hacia `main` del repositorio original.**  
+
     En la descripción, enlaza la tarea de ClickUp y asígnale al revisor correspondiente.
 
 ---
