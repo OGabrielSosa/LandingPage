@@ -19,11 +19,18 @@ cd landing
 npm install
 ```
 
-4. **Agrega el repositorio original como remoto `upstream`:**
+   Asegúrate de tener Node.js y npm instalados. Puedes verificarlo con:
+```bash
+node -v
+npm -v
+```
+3.1 **Levanta el servidor de desarrollo:**
 
 ```bash
-git remote add upstream https://github.com/FolkodeGroup/landing.git
+npm run dev
 ```
+   Abre tu navegador en `http://localhost:3000` para ver la aplicación en funcionamiento.
+   deberías ver la página de inicio de la landing page.
 
 5. **Sincroniza tu fork con la última versión de `main` antes de empezar:**
 
