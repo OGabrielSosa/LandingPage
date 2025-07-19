@@ -211,3 +211,5 @@ git push -u origin nombre-de-la-rama
 ---
 
 **¿Dudas?** Consulta en el canal de desarrollo del equipo o revisa la documentación oficial de las tecnologías utilizadas.
+
+Este es un test para el setup de CI/CD.
