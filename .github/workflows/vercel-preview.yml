@@ -1,16 +1,15 @@
-name: Vercel Production and Staging Deployment
+name: Vercel Preview Deployment
 
 on:
-  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
     branches:
-      - develop # Para despliegues a staging
-      - main    # Para despliegues a producción
+      - develop # Para PRs de features/X a develop
+      - main    # Para PRs de develop a main
 
 jobs:
-  deploy:
+  deploy-preview:
     runs-on: ubuntu-latest
-    environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -32,11 +31,10 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Vercel
-        id: deploy
+      - name: Deploy to Vercel Preview
         uses: BetaHuhn/deploy-to-vercel-action@v6
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: ${{ github.ref == 'refs/heads/main' && '--prod --yes' || '--yes' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
