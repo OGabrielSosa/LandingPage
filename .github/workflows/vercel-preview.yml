@@ -32,7 +32,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to Vercel Preview
-        uses: BetaHuhn/deploy-to-vercel-action@v5
+        uses: BetaHuhn/deploy-to-vercel-action@v4
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}

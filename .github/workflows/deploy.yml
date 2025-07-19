@@ -34,7 +34,7 @@ jobs:
 
       - name: Deploy to Vercel
         id: deploy
-        uses: BetaHuhn/deploy-to-vercel-action@v5
+        uses: BetaHuhn/deploy-to-vercel-action@v4
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
