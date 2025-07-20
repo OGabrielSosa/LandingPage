@@ -1,8 +1,9 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="navbar">
+    <nav className="navbar fixed top-0 left-0 w-full z-50 bg-secondary shadow-lg">
       {/* Contenedor principal */}
       <div className="navbar-main">
         {/* Sección superior (negra + verde) */}
@@ -10,8 +11,7 @@ const Navbar: React.FC = () => {
           {/* Sección izquierda negra con forma diagonal */}
           <div className="navbar-left">
             <div className="navbar-left-diagonal">
-              <img className="navbar-logo-img" src="./folkode-oscuro.png" alt="Folkode Logo" />
-
+              <Image className="navbar-logo-img" src="/folkode-oscuro-no-bg.png" alt="Folkode Logo" width={180} height={180} />
             </div>
           </div>
 
