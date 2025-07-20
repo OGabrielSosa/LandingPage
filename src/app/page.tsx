@@ -1,9 +1,11 @@
+import Navbar from "@/components/Navbar"
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-24">
         {/* Título principal */}
         <h1 className="text-h1 text-primary mb-6">DevCore Group</h1>
+        <Navbar/>
 
         {/* Subtítulo */}
         <h2 className="text-h2 mb-4">
