@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import 'tailwindcss';
 
 @layer base {
@@ -5,7 +6,7 @@
     /* Paleta de Colores - MODO CLARO */
     --color-primary: #86A869; /* Verde Oliva según Figma */
     --color-primary-hover: #4a6f55; /* Verde oscuro */
-    --color-secondary: #01454f; /* Azul Petróleo Oscuro para secciones */
+    --color-secondary: #01454F; /* Azul Petróleo Oscuro para secciones */
     --color-secondary-hover: #025159; /* Azul Petróleo */
     --color-accent: #3383b7; /* Celeste para CTAs */
     --color-accent-hover: #2563eb;
@@ -33,10 +34,10 @@
 
   .dark {
     /* Paleta de Colores - MODO OSCURO según Figma */
-    --color-primary: #69b578; /* Verde más brillante */
+    --color-primary: #025159; /* Verde más brillante */
     --color-primary-hover: #5e8d6b; /* Verde Oliva */
-    --color-secondary: #025159; /* Azul Petróleo más claro para contraste */
-    --color-secondary-hover: #01454f;
+    --color-secondary: #01454F; /* Azul Petróleo más claro para contraste */
+    --color-secondary-hover: #025159;
     --color-accent: #3383b7; /* Celeste */
     --color-accent-hover: #2563eb;
 
@@ -54,17 +55,62 @@
     --color-text-primary: #e6edf3;
     --color-text-secondary: #8b949e;
     --color-text-tertiary: #656d76;
-    --color-text-inverse: #0d1117;
+  
 
     /* Bordes según Figma */
     --color-border-subtle: #30363d;
     --color-border: #21262d;
+  
+    /* Estilos Footer */
+  .terminos-footer {
+    background-color: var(--color-secondary-hover);
+    color: var(--color-text-inverse);
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    min-height: 8.125rem; /* 130px */
+  }
+
+  .footer-folkode-dark .text-primary {
+    color: var(--color-text-inverse) !important;
+  }
+
+  .terminos-footer:hover {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-text-inverse);
+  }
+
+
+  @media (min-width: 768px) {
+    .terminos-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+    .terminos-footer .footer-left {
+      text-align: left;
+      flex: 1;
+    }
+    .terminos-footer .footer-center {
+      text-align: center;
+      flex: 1;
+      display: block;
+    }
+    .terminos-footer .footer-right {
+      text-align: right;
+      flex: 1;
+      display: block;
+    }
+  }
+
   }
 
   body {
     background-color: var(--color-background);
     color: var(--color-text-secondary);
-    font-family: var(--font-roboto), sans-serif;
+    font-family: 'Roboto', sans-serif;
     transition:
       background-color 0.3s ease,
       color 0.3s ease;
@@ -275,6 +321,8 @@
     background-color: var(--color-accent-hover);
   }
 
+
+
   /* Responsivo para títulos */
   @media (max-width: 768px) {
     .text-h1 {
@@ -289,4 +337,6 @@
       font-size: 1.5rem; /* 24px */
     }
   }
+
+  
 }
