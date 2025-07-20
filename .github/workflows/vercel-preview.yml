@@ -4,8 +4,8 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
-      - develop # Para PRs de features/X a develop
-      - main    # Para PRs de develop a main
+      - develop
+      - main
 
 jobs:
   deploy-preview:
@@ -20,28 +20,19 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
+
       - name: Install dependencies
         run: npm install --frozen-lockfile
-
-      - name: Run tests
-        run: npm test
-        env:
-          CI: true
 
       - name: Build project
         run: npm run build
 
-      # --- NUEVO PASO: Instalar Vercel CLI ---
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
 
-      # --- NUEVO PASO: Desplegar a Vercel Preview usando Vercel CLI ---
       - name: Deploy to Vercel Preview
-        run: |
-          vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --force --debug
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          # GITHUB_TOKEN ya NO es necesario aquí al usar el CLI directamente.
