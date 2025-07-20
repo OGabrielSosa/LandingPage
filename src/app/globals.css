@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import 'tailwindcss';
 
 @layer base {
@@ -5,7 +6,7 @@
     /* Paleta de Colores - MODO CLARO */
     --color-primary: #86A869; /* Verde Oliva según Figma */
     --color-primary-hover: #4a6f55; /* Verde oscuro */
-    --color-secondary: #01454f; /* Azul Petróleo Oscuro para secciones */
+    --color-secondary: #01454F; /* Azul Petróleo Oscuro para secciones */
     --color-secondary-hover: #025159; /* Azul Petróleo */
     --color-accent: #3383b7; /* Celeste para CTAs */
     --color-accent-hover: #2563eb;
@@ -33,10 +34,10 @@
 
   .dark {
     /* Paleta de Colores - MODO OSCURO según Figma */
-    --color-primary: #69b578; /* Verde más brillante */
+    --color-primary: #025159; /* Verde más brillante */
     --color-primary-hover: #5e8d6b; /* Verde Oliva */
-    --color-secondary: #025159; /* Azul Petróleo más claro para contraste */
-    --color-secondary-hover: #01454f;
+    --color-secondary: #01454F; /* Azul Petróleo más claro para contraste */
+    --color-secondary-hover: #025159;
     --color-accent: #3383b7; /* Celeste */
     --color-accent-hover: #2563eb;
 
@@ -54,17 +55,62 @@
     --color-text-primary: #e6edf3;
     --color-text-secondary: #8b949e;
     --color-text-tertiary: #656d76;
-    --color-text-inverse: #0d1117;
+  
 
     /* Bordes según Figma */
     --color-border-subtle: #30363d;
     --color-border: #21262d;
+  
+    /* Estilos Footer */
+  .terminos-footer {
+    background-color: var(--color-secondary-hover);
+    color: var(--color-text-inverse);
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    min-height: 8.125rem; /* 130px */
+  }
+
+  .footer-folkode-dark .text-primary {
+    color: var(--color-text-inverse) !important;
+  }
+
+  .terminos-footer:hover {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-text-inverse);
+  }
+
+
+  @media (min-width: 768px) {
+    .terminos-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+    .terminos-footer .footer-left {
+      text-align: left;
+      flex: 1;
+    }
+    .terminos-footer .footer-center {
+      text-align: center;
+      flex: 1;
+      display: block;
+    }
+    .terminos-footer .footer-right {
+      text-align: right;
+      flex: 1;
+      display: block;
+    }
+  }
+
   }
 
   body {
     background-color: var(--color-background);
     color: var(--color-text-secondary);
-    font-family: var(--font-roboto), sans-serif;
+    font-family: 'Roboto', sans-serif;
     transition:
       background-color 0.3s ease,
       color 0.3s ease;
@@ -275,6 +321,8 @@
     background-color: var(--color-accent-hover);
   }
 
+
+
   /* Responsivo para títulos */
   @media (max-width: 768px) {
     .text-h1 {
@@ -288,5 +336,87 @@
     .text-h3 {
       font-size: 1.5rem; /* 24px */
     }
+  }
+
+  /* Navbar styles */
+  .navbar {
+    display: flex;
+    height: 196px;
+    overflow: hidden;
+    border: 1px solid var(--color-black);
+    background-color: var(--color-surface);
+  }
+
+  .navbar-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  .navbar-top {
+    display: flex;
+    flex: 1;
+    min-height: 100px;
+  }
+
+  .navbar-left {
+    position: relative;
+    width: 30%;
+    min-width: 250px;
+    height: 100%;
+    background-color: var(--color-secondary-hover);
+  }
+
+  .navbar-left-diagonal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black);
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+    border-right: 1px solid var(--color-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--color-text-inverse);
+    margin-bottom: 5px;
+  }
+
+  .navbar-logo-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-logo-img {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 4px;
+    }
+  }
+
+  .navbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 20px;
+    background-color: var(--color-secondary-hover);
+  }
+
+  .navbar-bottom {
+    height: 20px;
+    background-color: var(--color-secondary);
   }
 }
