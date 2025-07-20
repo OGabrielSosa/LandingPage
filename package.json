@@ -7,13 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watchAll=false"  
+    "test": "jest --watchAll=false --passWithNoTests"
   },
   "dependencies": {
     "framer-motion": "^12.23.6",
     "next": "15.4.1",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.28.0",

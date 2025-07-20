@@ -22,6 +22,12 @@ jobs:
           cache: 'npm'
 
 
+      - name: Install dependencies
+        run: npm install --frozen-lockfile
+
+      - name: Build project
+        run: npm run build
+
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
 
