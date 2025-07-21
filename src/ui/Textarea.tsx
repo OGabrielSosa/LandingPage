@@ -9,7 +9,7 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, variant = "primary", ...props }, ref) => {
-    const baseClasses = "w-full px-4 py-2 rounded-lg border transition-colors min-h-[100px]";
+    const baseClasses = "px-4 py-2 rounded-lg border transition-colors min-h-[100px]";
     const variantClasses = {
       primary: "bg-surface border-default text-primary focus:border-primary",
       secondary: "bg-background border-subtle text-secondary focus:border-secondary",
@@ -18,9 +18,10 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <textarea
         ref={ref}
-        className="bg-white"
+        className={`${baseClasses} ${variantClasses[variant]} ${className ?? ""}`}
         placeholder="Escribime algo bonito"
-        />
+        {...props}
+      />
     );
   }
 );
