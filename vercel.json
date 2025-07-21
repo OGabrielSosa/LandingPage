@@ -4,3 +4,7 @@
   "outputDirectory": ".next",
   "framework": "next"
 }
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true
+}
