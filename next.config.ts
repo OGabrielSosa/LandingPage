@@ -1,5 +1,4 @@
-export default {
-  experimental: {
-    forceSwcTransforms: true,
-  },
+const nextConfig = {
 };
+
+export default nextConfig;
