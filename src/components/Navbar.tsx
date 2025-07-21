@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Desplegable from "@/components/Desplegable";
 
 const Navbar: React.FC = () => {
   return (
@@ -17,10 +18,10 @@ const Navbar: React.FC = () => {
 
           {/* Sección derecha verde más claro */}
           <div className="navbar-right">
-            {['Inicio', 'Contáctanos', 'Sobre Nosotros', 'Servicios'].map((item) => (
-              <span 
-                key={item}
-                className="text-nav-link" 
+            {['Inicio', 'Contáctanos', <Desplegable />, 'Servicios'].map((item, idx) => (
+              <span
+                key={`nav-item-${idx}`}
+                className="text-nav-link"
                 style={{ color: 'var(--color-text-inverse)', transition: 'color 0.2s ease' }}
               >
                 {item}
