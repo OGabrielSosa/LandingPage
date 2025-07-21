@@ -2,9 +2,6 @@
   "version": 2,
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
-  "framework": "next"
-}
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "next",
   "cleanUrls": true
 }
