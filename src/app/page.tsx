@@ -4,6 +4,7 @@ import Desplegable from "@/components/Desplegable";
 import Button from "@/components/Button";
 import Input from "@/ui/Input";
 import Textarea from "@/ui/Textarea";
+import QueHacemosSection from "@/components/QueHacemosSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <HeroSection />
         <Desplegable />
         <AboutSection />
+        <QueHacemosSection />
         <p>Input y Textarea</p>
         <Input/>
         <br />
