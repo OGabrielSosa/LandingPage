@@ -1,6 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import Desplegable from "@/components/Desplegable";
 import Button from "@/components/Button";
 import Input from "@/ui/Input";
 import Textarea from "@/ui/Textarea";
@@ -11,7 +10,6 @@ export default function Home() {
     <main className="min-h-screen flex flex-col gap-6 items-start p-8">
       <div className="container mx-auto px-6 py-24">
         <HeroSection />
-        <Desplegable />
         <AboutSection />
         <QueHacemosSection />
         <p>Input y Textarea</p>
