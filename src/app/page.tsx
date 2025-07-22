@@ -1,4 +1,4 @@
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import Desplegable from "@/components/Desplegable";
 import Button from "@/components/Button";
@@ -8,9 +8,9 @@ import QueHacemosSection from "@/components/QueHacemosSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col gap-6 items-start p-8">
+    <main className="min-h-screen flex flex-col gap-6 items-start">
+      <HeroSection />
       <div className="container mx-auto px-6 py-24">
-        <HeroSection />
         <Desplegable />
         <AboutSection />
         <QueHacemosSection />
