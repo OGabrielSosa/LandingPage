@@ -379,7 +379,6 @@
   .navbar {
     display: flex;
     height: 196px;
-    overflow: hidden;
     border: 1px solid var(--color-black);
     background-color: var(--color-surface);
   }
