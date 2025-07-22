@@ -24,22 +24,45 @@ export default function Desplegable() {
         };
     }, [isOpen]);
     return (
-        <section ref={menuRef}> {/* Esto hay que agregarlo dentro del tag nav */}
-                <button className="btn-desplegable" onClick={toggleDropdown}> Sobre Nosotros</button>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.85 }}
-                    >
-                        <ul className="btn-desplegable-abierto">
-                            <li className="mb-2 text-body-desplegable"><a href="#">Casos de Estudio</a></li>
-                            <li className="mb-2 text-body-desplegable"><a href="#">Que Ofrecemos</a></li>
-                            <li className="mb-2 text-body-desplegable"><a href="#">Beneficios</a></li>
-                        </ul>
-                    </motion.div>
-                )}
-        </section>
+        <div ref={menuRef} style={{ position: "relative", display: "inline-block" }}>
+            <button
+                type="button"
+                className="btn-desplegable"
+                onClick={toggleDropdown}
+                style={{
+                    textAlign: "left", // Alinea el texto igual que los links
+                    paddingLeft: "1.5rem", // Igual que el menú desplegable
+                    paddingRight: "1.5rem",
+                    width: "11rem"
+                }}
+            >
+                Sobre Nosotros
+            </button>
+            {isOpen && (
+                <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.85 }}
+                    style={{
+                        position: "absolute",
+                        top: "100%",
+                        left: 0,
+                        zIndex: 10,
+                        width: "11rem",
+                        background: "#86A869",
+                        borderRadius: "0 0 8px 8px",
+                        boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
+                        padding: 0
+                    }}
+                >
+                    <ul className="btn-desplegable-abierto" style={{ paddingLeft: "1.5rem", paddingRight: "1.5rem" }}>
+                        <li className="mb-2 text-body-desplegable"><a href="#">Casos de Estudio</a></li>
+                        <li className="mb-2 text-body-desplegable"><a href="#">Que Ofrecemos</a></li>
+                        <li className="mb-2 text-body-desplegable"><a href="#">Beneficios</a></li>
+                    </ul>
+                </motion.div>
+            )}
+        </div>
     )
 }
