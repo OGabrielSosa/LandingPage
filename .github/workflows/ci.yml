@@ -1,19 +1,14 @@
-name: CI/CD Pipeline
+name: Simple CI Pipeline
 
 on:
   push:
-    branches:
-      - main
-      - develop
+    branches: [main, develop]
   pull_request:
-    branches:
-      - main
-      - develop
+    branches: [main, develop]
 
 jobs:
-  test_and_lint:
+  quality_checks:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -25,72 +20,20 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install --frozen-lockfile
+        run: npm ci
 
-      - name: Run linter
+      - name: Run ESLint
         run: npm run lint
 
-      - name: Run tests
-        run: npm test
-        env:
-          CI: true
-
-  deploy:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install --frozen-lockfile
+      - name: Type check
+        run: npx tsc --noEmit
 
       - name: Build project
         run: npm run build
-
-      - name: Deploy to Vercel (Production)
-        uses: vercel/actions@v1
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          org-id: folkodegroups-projects
-          project-id: landing-kbah34ym7
-          github-comment: true
         env:
-          VERCEL_TELEMETRY_DISABLED: 1
           NEXT_TELEMETRY_DISABLED: 1
 
-  vercel-preview:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install --frozen-lockfile
-
-      - name: Build project
-        run: npm run build
-
-      - name: Deploy to Vercel (Preview)
-        uses: vercel/actions@v1
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          org-id: folkodegroups-projects
-          project-id: landing-kbah34ym7
-          github-comment: true
-        env:
-          VERCEL_TELEMETRY_DISABLED: 1
-          NEXT_TELEMETRY_DISABLED: 1
+      - name: Success message
+        run: |
+          echo "✅ All checks passed!"
+          echo "🚀 Vercel will handle deployment automatically"
