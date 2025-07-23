@@ -457,7 +457,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50px * 26 - 0.5rem * 52));
+    transform: translateX(calc(-50px * 27 - 0.5rem * 54));
   }
 }
 
@@ -553,6 +553,10 @@
   height: 72px;
   z-index: 2;
   padding-top: 0px;
+}
+
+.icon-img {
+  padding-top: 25px;
 }
 
 .icon-container {
