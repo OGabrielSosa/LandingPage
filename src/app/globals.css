@@ -452,22 +452,21 @@
 }
 
 
-@keyframes scroll{
+@keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50px * 27 - 0.5rem * 54));
+    transform: translateX(calc(-33.33% - 24px));
   }
 }
 
 /* Estilos para Tecnologias - logos centrados y sobresaliendo sobre el borde superior */
 .animate-scroll {
-  animation: scroll 10s linear infinite;
-  width: 100px;
   display: flex;
-  flex-direction: row;
   gap: 24px;
+  animation: scroll 15s linear infinite;
+  width: fit-content;
 }
 
 .cards-tecnologias {
@@ -565,11 +564,12 @@
   text-align: center;
   background-color: #01454F;
   border-radius: 15px;
-  width: 743px; /* ancho para 6 iconos y 5 gaps */
-  height: 140px; /* altura para los iconos */
-  margin: 0 auto; /* centrar horizontalmente */
+  width: 743px;
+  height: 140px;
+  margin: 0 auto;
   padding-top: 0.2rem;
   margin-top: -50px;
+  overflow: hidden;
 }
 
 

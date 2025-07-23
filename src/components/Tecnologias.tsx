@@ -85,7 +85,7 @@ export default function Tecnologias() {
                   <SiMongodb  size={50} color="#01EC64" style={{ verticalAlign: "middle" }} /> <p className="pt-2">MongoDB</p>
               </li>,
               <li className="icon-img">
-                  <VscTerminalPowershell  size={50} color="#FFFFFF" style={{ verticalAlign: "middle" }} /> <p className="pt-2">MongoDB</p>
+                  <VscTerminalPowershell  size={50} color="#FFFFFF" style={{ verticalAlign: "middle" }} /> <p className="pt-2">PowerShell</p>
               </li>,];
 
   const repeatedItems = [...items, ...items];
@@ -129,9 +129,15 @@ export default function Tecnologias() {
         <div className="w-full">
           <div className="overflow-hidden cards-tecnologias icon-container">
             <ul className="animate-scroll">
-              {[...items, ...items].map((icon, i) => (
+              {items.map((icon, i) => (
                   <div key={i} className="carousel-item">{icon}</div>
-                ))}
+              ))}
+              {items.map((icon, i) => (
+                  <div key={`duplicate-${i}`} className="carousel-item">{icon}</div>
+              ))}
+              {items.map((icon, i) => (
+                  <div key={`triplicate-${i}`} className="carousel-item">{icon}</div>
+              ))}
             </ul>
           </div>
         </div>
