@@ -1,12 +1,19 @@
 import React from 'react';
-import Card from './ui/Card';
+import Card from '@/ui/Card';
+
+interface ActividadCardProps {
+  mode?: 'dark' | 'light';
+  iconClass?: string;
+  title?: string;
+  items?: string[];
+}
 
 export default function ActividadCard({
   mode = 'dark',
   iconClass = 'bi bi-code-slash',
   title = 'Desarrollo Web Profesional',
   items = [],
-}) {
+}: ActividadCardProps) {
   const isDark = mode === 'dark';
 
   const bgColor = isDark ? '!bg-[#01454F]' : '!bg-[#86A869]';
@@ -15,7 +22,7 @@ export default function ActividadCard({
 
   return (
     <div className="max-w-sm w-full font-['Roboto']">
-      <Card className={`${bgColor} ${textColor} min-h-[520px]`}>
+      <Card className={`${bgColor} ${textColor} min-h-[350px]`}>
         <div className="flex flex-col items-center text-center gap-4">
           {/* Ícono principal superior */}
           <i className={`${iconClass} ${iconColor}`} style={{ fontSize: 60 }} />

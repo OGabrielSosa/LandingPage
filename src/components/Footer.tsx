@@ -1,5 +1,5 @@
 'use client';
-import { FaGithub, FaDiscord, FaEnvelope, FaWhatsapp, FaFacebook } from "react-icons/fa";
+import { FaGithub, FaDiscord, FaEnvelope, FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 
 export default function Footer() {
@@ -71,13 +71,17 @@ export default function Footer() {
               <FaFacebook className="text-2xl text-blue-600" />
               <a href="https://www.facebook.com/profile.php?id=61578733043220" target="_blank" rel="noopener noreferrer" className="text-nav-link hover:underline">Facebook</a>
             </li>
+            <li className="flex items-center gap-3">
+              <FaInstagram className="text-2xl text-pink-500" />
+              <a href="https://www.instagram.com/fol.kode" target="_blank" rel="noopener noreferrer" className="text-nav-link hover:underline">Instagram</a>
+            </li>
           </ul>
         </div>
       </div>
 
       {/* Línea inferior */}
       <div className="terminos-footer text-center flex flex-col md:flex-row justify-between items-center px-6">
-        <span className="footer-left">©All Copyright 2025 by Folkode</span>
+        <span className="footer-left</svg>">©All Copyright 2025 by Folkode</span>
         <a href="#" className="footer-center hover:underline">Políticas de privacidad</a>
         <span className="footer-right">Diseñado por Folkode</span>
       </div>
