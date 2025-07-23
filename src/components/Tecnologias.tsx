@@ -1,100 +1,64 @@
 "use client";
 import { motion } from "framer-motion";
 import React, { useState, useRef, useEffect } from "react";
-import { SiReact, SiNodedotjs, SiNextdotjs, SiTailwindcss, SiGraphql, SiKotlin, SiHtml5, SiDjango, SiFlask, SiOpenai, SiPostgresql, SiJavascript, SiVuetify, SiSqlite, SiFastapi, SiNestjs, SiMysql, SiAstro, SiAngular, SiGnubash, SiC, SiCplusplus, SiPython, SiCss3, SiTypescript, SiMongodb, } from "react-icons/si";
+import {
+  SiReact, SiNodedotjs, SiNextdotjs, SiTailwindcss, SiGraphql, SiKotlin,
+  SiHtml5, SiDjango, SiFlask, SiOpenai, SiPostgresql, SiJavascript,
+  SiVuetify, SiSqlite, SiFastapi, SiNestjs, SiMysql, SiAstro, SiAngular,
+  SiGnubash, SiC, SiCplusplus, SiPython, SiCss3, SiTypescript, SiMongodb
+} from "react-icons/si";
 import { VscTerminalPowershell } from "react-icons/vsc";
 import { FaGlobe, FaAndroid, FaApple, FaRegClock, FaTv, FaRocket } from "react-icons/fa";
 
 export default function Tecnologias() {
-  const items = [<li className="icon-img">
-                  <SiReact size={50} color="#61DAFB" style={{ verticalAlign: "middle" }} /> <p className="pt-2">React.js</p>
-              </li>,
-              <li className="icon-img">
-                  <SiNodedotjs size={50} color="#339933" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Node.js</p>
-              </li>,
-              <li className="icon-img">
-                  <SiNextdotjs size={50} color="#000000" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Next.js</p>
-              </li>,
-              <li className="icon-img">
-                  <SiTailwindcss size={50} color="#38BDF8" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Tailwind CSS</p>
-              </li>,
-              <li className="icon-img">
-                  <SiGraphql size={50} color="#E10098" style={{ verticalAlign: "middle" }} /> <p className="pt-2">GraphQL</p>
-              </li>,
-              <li className="icon-img">
-                  <SiKotlin size={50} color="#E10098" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Kotlin</p>
-              </li>,
-              <li className="icon-img">
-                  <SiHtml5 size={50} color="#c3690aff" style={{ verticalAlign: "middle" }} /> <p className="pt-2">HTML</p>
-              </li>,
-              <li className="icon-img">
-                  <SiDjango size={50} color="#44B78B" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Django</p>
-              </li>,
-              <li className="icon-img">
-                  <SiFlask size={50} color="#FFFFFF" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Flask</p>
-              </li>,
-              <li className="icon-img">
-                  <SiOpenai size={50} color="#FFFFFF" style={{ verticalAlign: "middle" }} /> <p className="pt-2">OpenAi</p>
-              </li>,
-              <li className="icon-img">
-                  <SiPostgresql size={50} color="#FFFFFF" style={{ verticalAlign: "middle" }} /> <p className="pt-2">PostgreQL</p>
-              </li>,
-              <li className="icon-img">
-                  <SiJavascript size={50} color="#F0DB4F" style={{ verticalAlign: "middle" }} /> <p className="pt-2">JavaScript</p>
-              </li>,
-              <li className="icon-img">
-                  <SiVuetify size={50} color="#44B78B" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Vuetify</p>
-              </li>,
-              <li className="icon-img">
-                  <SiSqlite size={50} color="#0F80CC" style={{ verticalAlign: "middle" }} /> <p className="pt-2">SQLite</p>
-              </li>,
-              <li className="icon-img">
-                  <SiFastapi size={50} color="#009688" style={{ verticalAlign: "middle" }} /> <p className="pt-2">FastAPI</p>
-              </li>,
-              <li className="icon-img">
-                  <SiNestjs size={50} color="#E0234E" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Nest.js</p>
-              </li>,
-              <li className="icon-img">
-                  <SiMysql size={50} color="#FFFFFF" style={{ verticalAlign: "middle" }} /> <p className="pt-2">MySQL</p>
-              </li>,
-              <li className="icon-img">
-                  <SiAstro size={50} color="#FF5D01" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Astro</p>
-              </li>,
-              <li className="icon-img">
-                  <SiAngular size={50} color="#DC087D" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Angular</p>
-              </li>,
-              <li className="icon-img">
-                  <SiGnubash size={50} color="#FFFFFF" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Bash</p>
-              </li>,
-              <li className="icon-img">
-                  <SiC size={50} color="#00599C" style={{ verticalAlign: "middle" }} /> <p className="pt-2">C</p>
-              </li>,
-              <li className="icon-img">
-                  <SiCplusplus  size={50} color="#659AD2" style={{ verticalAlign: "middle" }} /> <p className="pt-2">C++</p>
-              </li>,
-              <li className="icon-img">
-                  <SiPython  size={50} color="#387EB8" style={{ verticalAlign: "middle" }} /> <p className="pt-2">Python</p>
-              </li>,
-              <li className="icon-img">
-                  <SiCss3  size={50} color="#264DE4" style={{ verticalAlign: "middle" }} /> <p className="pt-2">CSS</p>
-              </li>,
-              <li className="icon-img">
-                  <SiTypescript  size={50} color="#3178C6" style={{ verticalAlign: "middle" }} /> <p className="pt-2">TypeScript</p>
-              </li>,
-              <li className="icon-img">
-                  <SiMongodb  size={50} color="#01EC64" style={{ verticalAlign: "middle" }} /> <p className="pt-2">MongoDB</p>
-              </li>,
-              <li className="icon-img">
-                  <VscTerminalPowershell  size={50} color="#FFFFFF" style={{ verticalAlign: "middle" }} /> <p className="pt-2">PowerShell</p>
-              </li>,];
+  // ✅ Convertir array de JSX a array de objetos con IDs únicos
+  const techData = [
+    { id: 'react', icon: SiReact, color: '#61DAFB', name: 'React.js' },
+    { id: 'nodejs', icon: SiNodedotjs, color: '#339933', name: 'Node.js' },
+    { id: 'nextjs', icon: SiNextdotjs, color: '#000000', name: 'Next.js' },
+    { id: 'tailwind', icon: SiTailwindcss, color: '#38BDF8', name: 'Tailwind CSS' },
+    { id: 'graphql', icon: SiGraphql, color: '#E10098', name: 'GraphQL' },
+    { id: 'kotlin', icon: SiKotlin, color: '#E10098', name: 'Kotlin' },
+    { id: 'html5', icon: SiHtml5, color: '#c3690aff', name: 'HTML' },
+    { id: 'django', icon: SiDjango, color: '#44B78B', name: 'Django' },
+    { id: 'flask', icon: SiFlask, color: '#FFFFFF', name: 'Flask' },
+    { id: 'openai', icon: SiOpenai, color: '#FFFFFF', name: 'OpenAi' },
+    { id: 'postgresql', icon: SiPostgresql, color: '#FFFFFF', name: 'PostgreQL' },
+    { id: 'javascript', icon: SiJavascript, color: '#F0DB4F', name: 'JavaScript' },
+    { id: 'vuetify', icon: SiVuetify, color: '#44B78B', name: 'Vuetify' },
+    { id: 'sqlite', icon: SiSqlite, color: '#0F80CC', name: 'SQLite' },
+    { id: 'fastapi', icon: SiFastapi, color: '#009688', name: 'FastAPI' },
+    { id: 'nestjs', icon: SiNestjs, color: '#E0234E', name: 'Nest.js' },
+    { id: 'mysql', icon: SiMysql, color: '#FFFFFF', name: 'MySQL' },
+    { id: 'astro', icon: SiAstro, color: '#FF5D01', name: 'Astro' },
+    { id: 'angular', icon: SiAngular, color: '#DC087D', name: 'Angular' },
+    { id: 'bash', icon: SiGnubash, color: '#FFFFFF', name: 'Bash' },
+    { id: 'c', icon: SiC, color: '#00599C', name: 'C' },
+    { id: 'cplusplus', icon: SiCplusplus, color: '#659AD2', name: 'C++' },
+    { id: 'python', icon: SiPython, color: '#387EB8', name: 'Python' },
+    { id: 'css3', icon: SiCss3, color: '#264DE4', name: 'CSS' },
+    { id: 'typescript', icon: SiTypescript, color: '#3178C6', name: 'TypeScript' },
+    { id: 'mongodb', icon: SiMongodb, color: '#01EC64', name: 'MongoDB' },
+    { id: 'powershell', icon: VscTerminalPowershell, color: '#FFFFFF', name: 'PowerShell' }
+  ];
 
-  const repeatedItems = [...items, ...items];
+  // ✅ Generar elementos JSX con keys únicas
+  const items = techData.map((tech) => {
+    const IconComponent = tech.icon;
+    return (
+      <li key={tech.id} className="icon-img">
+        <IconComponent size={50} color={tech.color} style={{ verticalAlign: "middle" }} />
+        <p className="pt-2">{tech.name}</p>
+      </li>
+    );
+  });
 
   return (
     <section className="text-inverse section-tecnologias">
-      <h2 className="text-h2 mb-8 text-center ">
+      <h2 className="text-h2 mb-8 text-center">
         Tecnologías en las que Trabajamos
       </h2>
+
       <div className="div-tecnologias pt-8">
         <ul className="">
           <div className="cards-tecnologias">
@@ -125,18 +89,30 @@ export default function Tecnologias() {
           </div>
         </ul>
       </div>
+
       <div className="pt-20">
         <div className="w-full">
           <div className="overflow-hidden cards-tecnologias icon-container">
             <ul className="animate-scroll">
+              {/* ✅ Primera repetición con keys únicas */}
               {items.map((icon, i) => (
-                  <div key={i} className="carousel-item">{icon}</div>
+                <div key={`first-${techData[i].id}`} className="carousel-item">
+                  {icon}
+                </div>
               ))}
+
+              {/* ✅ Segunda repetición con keys únicas */}
               {items.map((icon, i) => (
-                  <div key={`duplicate-${i}`} className="carousel-item">{icon}</div>
+                <div key={`second-${techData[i].id}`} className="carousel-item">
+                  {icon}
+                </div>
               ))}
+
+              {/* ✅ Tercera repetición con keys únicas */}
               {items.map((icon, i) => (
-                  <div key={`triplicate-${i}`} className="carousel-item">{icon}</div>
+                <div key={`third-${techData[i].id}`} className="carousel-item">
+                  {icon}
+                </div>
               ))}
             </ul>
           </div>
