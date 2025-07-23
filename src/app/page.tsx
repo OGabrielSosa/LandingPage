@@ -14,6 +14,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <QueHacemosSection />
+        <Tecnologias />
         <p>Input y Textarea</p>
         <Input/>
         <br />
