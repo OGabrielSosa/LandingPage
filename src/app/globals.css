@@ -38,6 +38,7 @@
     --color-primary-hover: #5e8d6b; /* Verde Oliva */
     --color-secondary: #01454F; /* Azul Petróleo más claro para contraste */
     --color-secondary-hover: #025159;
+    --color-tertiary: #496332;
     --color-accent: #3383b7; /* Celeste */
     --color-accent-hover: #2563eb;
 
@@ -55,12 +56,12 @@
     --color-text-primary: #e6edf3;
     --color-text-secondary: #8b949e;
     --color-text-tertiary: #656d76;
-  
+
 
     /* Bordes según Figma */
     --color-border-subtle: #30363d;
     --color-border: #21262d;
-  
+
     /* Estilos Footer */
   .terminos-footer {
     background-color: var(--color-secondary-hover);
@@ -449,3 +450,123 @@
     background-color: var(--color-secondary);
   }
 }
+
+
+@keyframes scroll{
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50px * 26 - 0.5rem * 52));
+  }
+}
+
+/* Estilos para Tecnologias - logos centrados y sobresaliendo sobre el borde superior */
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.cards-tecnologias {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.section-tecnologias {
+  padding: 2rem 1rem;
+  background-color: var(--color-tertiary);
+  color: var(--color-text-inverse);
+  width: 1440px;
+  height: 406px;
+  align-items: center;
+}
+
+.li-tecnologias {
+  position: relative;
+  display: flex;
+  overflow: visible;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 16px;
+  min-width: 140px;
+  min-height: 100px;
+  padding-top: 40px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.li-tecnologias:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
+.li-tecnologias span {
+  margin-top: 64px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Ajuste de la tarjeta para centrar el contenido y evitar protrusión */
+.li-tecnologias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: fff;
+  border: 2px solid #fff;
+  border-radius: 16px;
+  min-width: 140px;
+  min-height: 100px;
+  padding: 24px 16px 16px 16px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.li-tecnologias::before {
+  content: "";
+  position: absolute;
+  top: -2px; /* igual al borde */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px; /* igual al tamaño del icono */
+  height: 36px; /* suficiente para tapar el borde */
+  background: var(--color-tertiary); /* igual al fondo de la tarjeta */
+  z-index: 1;
+}
+
+.icon-tecnologia {
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55px;
+  height: 72px;
+  z-index: 2;
+  padding-top: 0px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #01454F;
+  border-radius: 15px;
+  width: 743px; /* ancho para 6 iconos y 5 gaps */
+  height: 140px; /* altura para los iconos */
+  margin: 0 auto; /* centrar horizontalmente */
+  padding-top: 0.2rem;
+  margin-top: -50px;
+}
+
+
+
