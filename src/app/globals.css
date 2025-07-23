@@ -464,7 +464,7 @@
 /* Estilos para Tecnologias - logos centrados y sobresaliendo sobre el borde superior */
 .animate-scroll {
   animation: scroll 10s linear infinite;
-  width: 800px;
+  width: 100px;
   display: flex;
   flex-direction: row;
   gap: 24px;
