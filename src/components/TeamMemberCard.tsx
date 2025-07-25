@@ -1,8 +1,25 @@
+'use client';
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import Card from './ui/Card';
+import Card from '@/ui/Card';
+import Image from 'next/image';
 
-function TeamMemberCard({
+export interface TeamMemberCardProps {
+  avatar: string;
+  name: string;
+  role: string;
+  headline: string;
+  description: string;
+  technologies: string[];
+  links: {
+    github?: string;
+    linkedin?: string;
+    instagram?: string;
+  };
+  mode?: 'dark' | 'light';
+}
+
+const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
   avatar,
   name,
   role,
@@ -11,7 +28,7 @@ function TeamMemberCard({
   technologies,
   links,
   mode = 'dark',
-}) {
+}) => {
   const isDark = mode === 'dark';
 
   const bgColor = isDark ? 'bg-black' : 'bg-white';
@@ -29,10 +46,13 @@ function TeamMemberCard({
       <Card className={`${bgColor} border-[10px] ${borderColor} ${textColor}`}>
         <div className="flex flex-col items-center text-center">
           <div className={`w-28 h-28 rounded-full border-[4px] ${borderColor} ${bgColor} p-1 mb-6`}>
-            <img
+            <Image
               src={avatar}
               alt={`${name} avatar`}
+              width={112}
+              height={112}
               className="w-full h-full rounded-full object-cover"
+              priority
             />
           </div>
 
@@ -85,10 +105,10 @@ function TeamMemberCard({
       </Card>
     </div>
   );
-}
+};
 
 export default function TeamMemberCardDemo() {
-  const [mode, setMode] = useState('dark');
+  const [mode, setMode] = useState<'dark' | 'light'>('dark');
 
   const toggleMode = () => setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
 
