@@ -1,6 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
-import React, { useState, useRef, useEffect } from "react";
 import { FaGlobe, FaAndroid, FaApple, FaRegClock, FaTv, FaRocket } from "react-icons/fa";
 
 export default function Tecnologias() {

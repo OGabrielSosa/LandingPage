@@ -10,12 +10,15 @@
     "test": "jest --watchAll=false --passWithNoTests"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
     "@vercel/analytics": "^1.5.0",
     "framer-motion": "^12.23.6",
     "next": "15.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-icons": "^5.5.0"
+    "react-hook-form": "^7.61.1",
+    "react-icons": "^5.5.0",
+    "zod": "^4.0.9"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.28.0",
